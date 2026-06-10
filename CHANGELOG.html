@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Kris Jusiak">
+  
+  <title>CHANGELOG - [Boost::ext].SML</title>
+  
+
+  <link rel="shortcut icon" href="./img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/codemirror.css">
+  <link rel="stylesheet" href="./css/highlight.css">
+  <link rel="stylesheet" href="./css/mdn-like.css">
+
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  <script src="./js/theme.js"></script>
+
+  <script src="./js/codemirror/codemirror.js"></script>
+  <script src="./js/codemirror/clike.js"></script>
+  <script src="./js/codemirror/active-line.js"></script>
+
+  <script src="./js/cpp.js"></script>
+  <script src="./js/gitter.js"></script>
+  <script src="./js/utility.js"></script> 
+  <script src="search/main.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+	
+	<nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+
+      <img src="./img/boost.png" />
+      <a href="" class="icon icon-home" style="font-weight:bold;text-align:left;padding:0.809em;color:#fcfcfc;margin-bottom:0.809em"> [Boost::ext].SML</a>
+
+      <div class="wy-side-nav-search">
+		<div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="index.html">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="overview.html">Overview</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="benchmarks.html">Features/Benchmarks</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="tutorial.html">Tutorial/Workshop</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="uml_vs_sml.html">UML vs SML</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="user_guide.html">User Guide</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="examples.html">Examples</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="faq.html">FAQ</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="CHANGELOG.html">CHANGELOG</a>
+        
+    </li>
+<li>
+          
+          <br />
+          <a class="github-button" href="https://github.com/boost-ext/sml" data-style="mega" data-count-href="/boost-ext/sml/stargazers" data-count-api="/repos/boost-ext/sml#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star boost-ext/sml on GitHub">GitHub</a>
+        </ul>
+      </div>
+
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="">[Boost::ext].SML</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="">Docs</a> &raquo;</li>
+    
+    
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="120-2026-06-01">[1.2.0] - 2026-06-01</h2>
+<ul>
+<li>
+<p><strong>Additions</strong></p>
+<ul>
+<li><code>sm::flush_queue()</code> — drain pending queued events from async handlers (#456)</li>
+<li><code>sml::clear_defer</code> action — discard deferred events from a transition (#643)</li>
+<li><code>sml::deps&lt;Ts...&gt;</code> policy — explicit pool dependencies for generic-lambda actions/guards (#437)</li>
+<li><code>sml::make_action&lt;Deps...&gt;(f)</code> — wrap a template/generic/constrained callable so its dependency and event types are deduced from the explicit <code>&lt;Deps...&gt;</code> list (#629)</li>
+</ul>
+</li>
+<li>
+<p><strong>Behavior changes</strong></p>
+<ul>
+<li>Empty-SM min-size trick is now OFF by default on GCC/Clang (it was UB at <code>-O2</code>);
+  opt back in with <code>BOOST_SML_CFG_ENABLE_MIN_SIZE</code>. <code>sizeof(sm)</code> for an empty SM may change (#249)</li>
+<li><code>any</code>/<code>_</code> wildcard no longer fires when a composable sub-SM has terminated (#622)</li>
+<li>Events raised via <code>process(E{})</code> are now storable in the process queue (#580)</li>
+<li>Guard taking <code>const State&amp;</code> now sees live pool state instead of a stale copy (#530)</li>
+<li>Sub-SM defer queue is cleared when its composite state is re-entered (#253)</li>
+</ul>
+</li>
+<li>
+<p><strong>Bug Fixes</strong></p>
+<ul>
+<li>Template-depth, <code>-Wshadow</code>, <code>-Wextra-semi</code>, UBSan, final-class, null-deref,
+  double-pop, reserved-identifier and related fixes — see full list:</li>
+<li>https://github.com/boost-ext/sml/compare/v1.1.13...v1.2.0</li>
+</ul>
+</li>
+<li>
+<p><strong>Documented limitations</strong></p>
+<ul>
+<li><code>on_entry&lt;_&gt;</code> multi-TU linker limitation and dispatch priority (#565)</li>
+<li><code>operator,</code> with two raw member-function-pointer actions; <code>wrap()</code> workaround (#389)</li>
+</ul>
+</li>
+</ul>
+<h2 id="1113-2025-12-01">[1.1.13] - 2025-12-01</h2>
+<ul>
+<li>Changes<ul>
+<li>https://github.com/boost-ext/sml/compare/v1.1.12...v1.1.13</li>
+</ul>
+</li>
+</ul>
+<h2 id="1112-2025-04-02">[1.1.12] - 2025-04-02</h2>
+<ul>
+<li>Changes<ul>
+<li>https://github.com/boost-ext/sml/compare/v1.1.11...v1.1.12</li>
+</ul>
+</li>
+</ul>
+<h2 id="1111-2024-03-09">[1.1.11] - 2024-03-09</h2>
+<ul>
+<li>
+<p><strong>Bug Fixes</strong></p>
+<ul>
+<li>MSVC typename</li>
+</ul>
+</li>
+<li>
+<p><strong>Additions</strong></p>
+<ul>
+<li>[performance] switch as defult dispatch_policy</li>
+</ul>
+</li>
+</ul>
+<h2 id="1110-2024-03-09">[1.1.10] - 2024-03-09</h2>
+<ul>
+<li>
+<p><strong>Bug Fixes</strong></p>
+<ul>
+<li><a href="https://github.com/boost-ext/sml/issues?utf8=%E2%9C%93&amp;q=is%3Aissue+is%3Aclosed+closed%3A2023-09-13..2024-03-09+">Issues</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Contributions</strong></p>
+<ul>
+<li><a href="https://github.com/boost-ext/sml/commits?author=devzeb">Sebastian Michel</a></li>
+<li><a href="https://github.com/rvdvvdw">rvdvvdw</a></li>
+<li><a href="https://github.com/uyha">Beartama</a></li>
+<li><a href="https://github.com/michaelcorreia-adt">michaelcorreia-adt</a></li>
+<li><a href="https://github.com/J-Meyers">Julian Meyers</a></li>
+<li><a href="https://github.com/marcobergamin">Marco Bergamin</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="119-2023-09-13">[1.1.9] - 2023-09-13</h2>
+<pre><code>- [Issues](https://github.com/boost-ext/sml/issues?utf8=%E2%9C%93&amp;q=is%3Aissue+is%3Aclosed+closed%3A2022-09-07..2023-09-13+)
+</code></pre>
+<h2 id="116-2022-09-07"><a href="https://github.com/boost-ext/sml/compare/v1.1.5...v1.1.6">1.1.6</a> - 2022-09-07</h2>
+<ul>
+<li><strong>Bug Fixes</strong><ul>
+<li><a href="https://github.com/boost-ext/sml/issues?utf8=%E2%9C%93&amp;q=is%3Aissue+is%3Aclosed+closed%3A2022-03-23..2022-09-07+">Issues</a><blockquote></blockquote>
+</li>
+</ul>
+</li>
+<li><strong>Contributions</strong><ul>
+<li><a href="https://github.com/ladislas">Ladislas de Toldi</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="115-2022-03-23"><a href="https://github.com/boost-ext/sml/compare/v1.1.4...v1.1.5">1.1.5</a> - 2022-03-23</h2>
+<ul>
+<li><strong>Bug Fixes</strong><ul>
+<li><a href="https://github.com/boost-ext/sml/issues?utf8=%E2%9C%93&amp;q=is%3Aissue+is%3Aclosed+closed%3A2021-02-16..2022-03-23+">Issues</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="114-2021-02-16"><a href="https://github.com/boost-ext/sml/compare/v1.1.3...v1.1.4">1.1.4</a> - 2021-02-16</h2>
+<ul>
+<li>
+<p><strong>Additions</strong></p>
+<ul>
+<li>LICENSE file</li>
+</ul>
+</li>
+<li>
+<p><strong>Bug Fixes</strong></p>
+<ul>
+<li><a href="https://github.com/boost-ext/sml/issues?utf8=%E2%9C%93&amp;q=is%3Aissue+is%3Aclosed+closed%3A2020-08-02..2021-02-16+">Issues</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="113-2020-08-02"><a href="https://github.com/boost-ext/sml/compare/v1.1.2...v1.1.3">1.1.3</a> - 2020-08-02</h2>
+<ul>
+<li><strong>Additions</strong><ul>
+<li>Support for member-function like guards/actions</li>
+<li>https://github.com/boost-ext/sml/commit/e6d0685993a8a0160dde1610d7f8be4f811c89d0<blockquote></blockquote>
+</li>
+</ul>
+</li>
+<li><strong>Bug Fixes</strong><ul>
+<li><a href="https://github.com/boost-ext/sml/issues?utf8=%E2%9C%93&amp;q=is%3Aissue+is%3Aclosed+closed%3A2020-08-02..2020-07-17+">Issues</a><blockquote></blockquote>
+</li>
+</ul>
+</li>
+<li><strong>Contributions</strong><ul>
+<li><a href="https://github.com/GuiCodron">Guilhem Codron</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="112-2020-06-14"><a href="https://github.com/boost-ext/sml/compare/v1.1.1...v1.1.2">1.1.2</a> - 2020-06-14</h2>
+<ul>
+<li><strong>Additions</strong><ul>
+<li>Support for GCC-10<blockquote></blockquote>
+</li>
+</ul>
+</li>
+<li><strong>Bug Fixes</strong><ul>
+<li><a href="https://github.com/boost-ext/sml/issues?utf8=%E2%9C%93&amp;q=is%3Aissue+is%3Aclosed+closed%3A2020-07-17..2020-06-14+">Issues</a><blockquote></blockquote>
+</li>
+</ul>
+</li>
+<li><strong>Contributions</strong><ul>
+<li><a href="https://github.com/erikzenkerLogmein">erikzenkerLogmein</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="111-2020-05-17"><a href="https://github.com/boost-ext/sml/compare/v1.1.0...v1.1.1">1.1.1</a> - 2020-05-17</h2>
+<ul>
+<li><strong>Additions</strong><ul>
+<li>Support for Clang-8.0/9.0/10.0</li>
+<li>Support for GCC-8/9/10</li>
+<li>Support for MSVC-2019/MSVC-2019 Preview<blockquote></blockquote>
+</li>
+</ul>
+</li>
+<li><strong>Bug Fixes</strong><ul>
+<li><a href="https://github.com/boost-ext/sml/issues?utf8=%E2%9C%93&amp;q=is%3Aissue+is%3Aclosed+closed%3A2019-01-08..2020-05-17+">Issues</a><blockquote></blockquote>
+</li>
+</ul>
+</li>
+<li><strong>Contributions</strong><ul>
+<li><a href="https://github.com/hazelnusse">Dale Lukas Peterson</a></li>
+<li><a href="https://github.com/ooxi">ooxi</a></li>
+<li><a href="https://github.com/erikzenkerLogmein">erikzenkerLogmein</a></li>
+<li><a href="https://github.com/redboltz">Takatoshi Kondo</a></li>
+<li><a href="https://github.com/drorspei">Dror Speiser</a></li>
+<li><a href="https://github.com/BenjaminW3">Benjamin Worpitz</a></li>
+<li><a href="">Richard Szabo</a></li>
+<li><a href="https://github.com/palarson">Patrick Larson</a></li>
+<li><a href="https://github.com/JoeLoser">Joseph Loser</a></li>
+<li><a href="">Maximilian Riemensberger</a></li>
+<li><a href="https://github.com/JoyIfBam5">Andrey</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="110-2019-01-08"><a href="https://github.com/boost-ext/sml/compare/v1.0.0...v1.1.0">1.1.0</a> - 2019-01-08</h2>
+<ul>
+<li><strong>Additions</strong><ul>
+<li>Support for Clang-5.0/6.0/7.0</li>
+<li>Support for GCC-7/8</li>
+<li>Support for MSVC-2015/MSVC-2017/MSVC-2017 Preview<blockquote></blockquote>
+</li>
+<li><strong>Build System</strong><ul>
+<li><a href="https://github.com/boost-ext/sml/blob/master/CMakeLists.txt">CMake support</a></li>
+<li><a href="https://github.com/boost-ext/sml/blob/master/conanfile.py">Conan support</a><blockquote></blockquote>
+</li>
+</ul>
+</li>
+<li><strong>Benchmarks</strong><ul>
+<li><a href="https://github.com/boost-ext/sml/tree/master/benchmark/connection">Connection</a><blockquote></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Bug Fixes</strong><ul>
+<li><a href="https://github.com/boost-ext/sml/issues?utf8=%E2%9C%93&amp;q=is%3Aissue+is%3Aclosed+closed%3A2016-05-16..2019-01-08+">Issues</a><blockquote></blockquote>
+</li>
+</ul>
+</li>
+<li><strong>Contributions</strong><ul>
+<li><a href="https://github.com/Bagira80">Deniz Bahadir</a></li>
+<li><a href="https://github.com/feltech">feltech</a></li>
+<li><a href="https://github.com/AnthonyVH">AnthonyVH</a></li>
+<li><a href="https://github.com/redboltz">Takatoshi Kondo</a></li>
+<li><a href="https://github.com/GuiCodron">GuiCodron</a></li>
+<li><a href="https://github.com/arteniioleg">Oleg Artenii</a></li>
+<li><a href="https://github.com/kamibo">Camille Bordignon</a></li>
+<li><a href="https://github.com/justwillim">William.Wu</a></li>
+<li><a href="https://github.com/sdebionne">Samuel Debionne</a></li>
+<li><a href="https://github.com/etam">Adam Mizerski</a></li>
+<li><a href="https://github.com/paulbendixen">Paul M. Bendixen</a></li>
+<li><a href="https://github.com/cmotl">Christopher Motl</a></li>
+<li><a href="https://github.com/JuliusGel">Julius Gelšvartas</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="101-2016-05-06"><a href="https://github.com/boost-ext/sml/compare/v1.0.0...v1.0.1">1.0.1</a> - 2016-05-06</h2>
+<ul>
+<li><strong>Additions</strong><ul>
+<li>Support for GCC-6.1</li>
+</ul>
+</li>
+</ul>
+<h2 id="100-2016-01-28"><a href="https://github.com/boost-ext/sml/tree/v1.0.0">1.0.0</a> - 2016-01-28</h2>
+<ul>
+<li>Initial version</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+
+  <select onChange="window.location.href=this.value" style="position: absolute; top: 20px; right: 30px; z-index: 10;">
+    <option value="https://boost-ext.github.io/sml" selected>Theme: Modern</option>
+    <option value="https://boost-ext.github.io/sml/boost">Theme: Classic</option>
+  </select>
+
+  
+
+  <hr/>
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES * * */
+  var disqus_shortname = 'boost-sml';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a> | Powered by <a href="https://wandbox.org">Wandbox</a>
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
+</body>
+</html>
